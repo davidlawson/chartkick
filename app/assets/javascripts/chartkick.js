@@ -124,10 +124,6 @@
         setMax(options, opts.max);
       }
 
-      if ("hmin" in opts) {
-        options.hAxis.viewWindow.min = toDate(opts.hmin);
-      }
-
       if (opts.stacked) {
         setStacked(options);
       }
@@ -138,6 +134,10 @@
 
       // merge library last
       options = merge(options, opts.library || {});
+
+      if ("hmin" in opts) {
+        options.hAxis.viewWindow.min = toDate(opts.hmin);
+      }
 
       return options;
     };

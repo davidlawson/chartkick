@@ -124,6 +124,10 @@
         setMax(options, opts.max);
       }
 
+      if ("hmin" in opts) {
+        options.hAxis.viewWindow.min = toDate(opts.hmin);
+      }
+
       if (opts.stacked) {
         setStacked(options);
       }
